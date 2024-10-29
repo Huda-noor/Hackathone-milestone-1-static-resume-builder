@@ -3,49 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milestone#1</title>
+    <title>Professional Profile</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h2>Personal Information</h2>
-    </header>
-    <main>
-        <section>Name: Huda Noor</section>
-        <section>Contact No: 03170109477</section>
-        <section>Email: sweethudanoor@gmail.com</section>
-        <section>LinkedIn Account: <a href="https://www.linkedin.com/in/huda-noor-a297512b4" target="_blank">https://www.linkedin.com/in/huda-noor-a297512b4</a></section>
-        <img src="profile.jpg.jpeg" alt="profile picture" width="100px">
-        <hr>
-        <h2>Education</h2>
-        <ol>
-            <li>Matriculation</li>
-            <li>Intermediate in Pre Engineering</li>
-            <li>Bachelor of Science in Computer Science</li>
-        </ol>
-        <hr>
-        <h2>Skills</h2>
-        <div id="skillsDiv" style="display: none;"> <!-- Initially hidden -->
+
+    <!-- Nav Bar -->
+    <nav class="navbar">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <header id="about"><br/><br/><br/>
+            <img src="profile.jpg.jpeg" alt="profile picture" width="150px">
+            <h2><u>
+                <section class="item1">Name: <b>Huda Noor</b></section>
+                <section class="item2">Contact No: <b>03170109477</b></section>
+                <section class="item3">Email: <b>sweethudanoor@gmail.com</b></section>
+                <section>
+                    LinkedIn Account: 
+                    <a href="https://www.linkedin.com/in/huda-noor-a297512b4" target="_blank">LinkedIn Profile</a>
+                </section>
+            </u></h2>
+        </header><br/>
+
+        <main class="main"> 
+            <hr>
+            <h2 id="education"><u>Education</u></h2>
             <ul>
-                <li>TypeScript</li>
-                <li>JavaScript</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Freelancing</li>
+                <li>Matriculation</li>
+                <li>Intermediate in Pre-Engineering</li>
+                <li>Bachelor of Science in Computer Science</li>
             </ul>
-        </div>
-        <div class="togglecontainer">
-            <input type="button" value="Show Skills" id="togglebutton" class="togglebutton"> <!-- Button starts with "Show Skills" -->
-        </div>
-        <hr>
-        <h2>Work Experience</h2>
-        <ul>
-            <li>Freelance Web Developer</li>
-            <li>Software Developer</li>
-            <li>4 months in TypeScript</li>
-        </ul>
-    </main>
-    <script src="index.js" type="module"></script> <!-- Make sure this is the compiled JavaScript file -->
+            
+            <hr>
+            <h2 id="skills"><u>Skills</u></h2>
+            <div id="skillsDiv">
+                <ul>
+                    <li>TypeScript</li>
+                    <li>JavaScript</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Freelancing</li>
+                </ul>
+            </div>
+            
+            <div class="togglecontainer">
+                <input type="button" value="Show Skills" id="togglebutton" class="togglebutton" aria-expanded="false">
+            </div>
+            
+            <hr>
+            <h2 id="experience"><u>Work Experience</u></h2>
+            <ul>
+                <li>Freelance Web Developer</li>
+                <li>Software Developer</li>
+                <li>4 months in TypeScript</li>
+            </ul> <br/> <br/> <br/>
+
+            <!-- Contact Section -->
+            <hr>
+            <h2 id="contact"><u>Contact</u></h2>
+            <div class="contact-info">
+                <a href="mailto:sweethudanoor@gmail.com" class="contact-button">Email Me</a>
+                <a href="https://www.linkedin.com/in/huda-noor-a297512b4" target="_blank" class="contact-button">LinkedIn Profile</a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Huda Noor. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript to handle the toggle functionality -->
+    <script type="module">
+        // Toggle visibility of skillsDiv with animations and accessibility
+        const toggleButton = document.getElementById('togglebutton');
+        const skillsDiv = document.getElementById('skillsDiv');
+
+        toggleButton.addEventListener('click', () => {
+            const isHidden = skillsDiv.classList.toggle('visible');
+            skillsDiv.style.display = isHidden ? 'block' : 'none';
+            toggleButton.value = isHidden ? 'Hide Skills' : 'Show Skills';
+            toggleButton.setAttribute('aria-expanded', isHidden);
+        });
+    </script>
+
 </body>
 </html>
-
